@@ -45,14 +45,10 @@ const Page = () => {
   };
   const sendOTP = async () => {
     setLoading(true);
-    try {
-      // Send OTP
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+    setTimeout(() => {
       setLoading(false);
-      //router.push('/otp');
-    } catch (error) {
-      setLoading(false);
-    }
+      router.push(`/verify/${phoneNumber}`);
+    }, 2000);
   };
 
   const trySignIn = async () => {};
